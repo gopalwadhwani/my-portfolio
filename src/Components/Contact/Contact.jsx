@@ -6,7 +6,7 @@ import linkedinIcon from "../../assets/in-removebg-preview.png";
 import githubIcon from "../../assets/github-removebg-preview.png";
 
 // normal CSS import
-import "./contact.css";
+import "./Contact.css";
 
 const Contact = () => {
   return (

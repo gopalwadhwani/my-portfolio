@@ -1,5 +1,5 @@
 import React from "react";
-import "./about.css";
+import "./About.css";
 
 import aboutImg from "../../assets/sittingWithLaptop-removebg-preview.png";
 import cursorIcon from "../../assets/cursor-icon-removebg-preview.png";

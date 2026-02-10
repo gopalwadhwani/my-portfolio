@@ -1,4 +1,4 @@
-import "./hero.css";
+import "./Hero.css";
 import heroImg from "../../../assets/portfolio-removebg-preview.png";
 
 const Hero = () => {
