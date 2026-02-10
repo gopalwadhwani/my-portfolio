@@ -1,0 +1,204 @@
+/* ===== PROJECTS SECTION ===== */
+.projects-container {
+  padding: 30px 10% 120px; /* more breathing room */
+  background: #04152d;
+  color: #ffffff;
+}
+
+/* ===== MAIN TITLE (Projects) ===== */
+.projects-title {
+  font-size: 50px;
+  font-weight: 800;
+  margin-bottom: 50px;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
+}
+
+.projects-subtitle {
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: 60px;
+  margin-bottom: 50px;
+  padding-left: 18px;
+  color: #5a79b3;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+/* Accent bar */
+.projects-subtitle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 70%;
+  background: linear-gradient(180deg, #576cbc, #19376d);
+  border-radius: 10px;
+}
+
+/* Optional divider */
+.projects-subtitle::after {
+  content: "";
+  display: block;
+  margin-top: 18px;
+  width: 120px;
+  height: 2px;
+  background: rgba(90, 121, 179, 0.4);
+}
+
+
+/* ===== MINI PROJECTS GRID ===== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* ===== PROJECT CARD ===== */
+.project-card {
+  background: #19376d;
+  border-radius: 20px;
+  padding: 32px 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.project-card img {
+  width: 100%;
+  max-width: 140px;
+  margin-bottom: 22px;
+}
+
+.project-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #dbe3ff;
+}
+
+/* subtle hover like skills */
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(87, 108, 188, 0.35);
+}
+
+/* ===== MAJOR PROJECT SECTION ===== */
+
+.working-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.working-container img {
+  width: 320px;
+  height: auto;
+  margin-bottom: 24px;
+}
+
+.working-container p {
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  font-size: 34px;
+  color: #fff;
+}
+
+/* ===== Tablet ===== */
+@media (max-width: 900px) {
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .projects-title {
+    font-size: 42px;
+  }
+
+  .projects-subtitle {
+    font-size: 30px;
+  }
+
+  .working-container img {
+    width: 260px;
+  }
+
+  .working-container p {
+    font-size: 28px;
+  }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 600px) {
+
+  .projects-container {
+    padding: 30px 6% 90px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .projects-title {
+    font-size: 34px;
+  }
+
+  .projects-subtitle {
+    font-size: 24px;
+    margin-top: 45px;
+    margin-bottom: 35px;
+  }
+
+  .project-card {
+    padding: 26px 20px;
+  }
+
+  .project-card img {
+    max-width: 120px;
+  }
+
+  .project-card h3 {
+    font-size: 20px;
+  }
+
+  .project-card p {
+    font-size: 15px;
+  }
+
+  .working-container img {
+    width: 220px;
+  }
+
+  .working-container p {
+    font-size: 24px;
+  }
+}
+
+/* ===== Extra Small Devices ===== */
+@media (max-width: 360px) {
+
+  .projects-title {
+    font-size: 30px;
+  }
+
+  .projects-subtitle {
+    font-size: 20px;
+  }
+
+  .working-container img {
+    width: 180px;
+  }
+
+  .working-container p {
+    font-size: 20px;
+  }
+}

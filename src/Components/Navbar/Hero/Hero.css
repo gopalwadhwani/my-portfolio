@@ -1,0 +1,208 @@
+/* ===== Hero Container ===== */
+.hero-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px;
+  min-height: calc(100vh - 80px);
+  z-index: 1;
+
+  background: rgba(4, 21, 45, 0.85); /* SAME AS NAVBAR */
+  backdrop-filter: blur(10px);
+}
+
+/* ===== Content ===== */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #ffffff;
+  max-width: 600px;
+}
+
+/* ===== Title ===== */
+.hero-title {
+  font-size: 50px;
+  font-weight: 900;
+  margin-bottom: 33px;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.1;
+
+  background: linear-gradient(
+    90deg,
+    #ffffff 70%,
+    rgba(255, 255, 255, 0.3) 120%
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-title span {
+  color: #576cbc;
+  -webkit-text-fill-color: #576cbc;
+}
+
+/* ===== Description ===== */
+.hero-description {
+  font-size: 27px;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 52px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Smooth word reveal */
+.hero-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: wordFade 0.35s ease forwards;
+}
+
+@keyframes wordFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ===== Button ===== */
+.hero-contact-btn {
+  text-decoration: none;
+  background: #576cbc; /* primary */
+  color: #ffffff;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 17px 40px;
+  transition: all 0.3s ease;
+}
+
+.hero-contact-btn:hover {
+  background: #19376d; /* secondary */
+}
+
+/* ===== Image ===== */
+.hero-image-wrapper {
+  position: relative;
+}
+
+.hero-image {
+  border: 2px solid rgb(21, 121, 151);
+  border-radius: 200px;
+  width: 360px;
+  margin-left: 20px;
+  background-color: #5a79b3;
+  max-width: 100%;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.6));
+}
+
+/* ===== Blur Background (SUBTLE) ===== */
+.hero-top-blur,
+.hero-bottom-blur {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: #576cbc;
+  filter: blur(140px);
+  opacity: 0.18;
+  z-index: -1;
+}
+
+.hero-top-blur {
+  top: -120px;
+  left: -120px;
+}
+
+.hero-bottom-blur {
+  bottom: -120px;
+  right: -120px;
+}
+
+@media (max-width: 900px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 120px;
+  }
+
+  .hero-content {
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 52px;
+  }
+
+  .hero-description {
+    font-size: 22px;
+  }
+
+  .hero-image {
+    margin-top: 40px;
+    width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .hero-container {
+    padding: 50px 40px;
+  }
+
+  .hero-title {
+    font-size: 42px;
+  }
+
+  .hero-description {
+    font-size: 20px;
+  }
+
+  .hero-image {
+    width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .hero-container {
+    padding: 40px 20px;
+    min-height: auto;
+  }
+
+  .hero-title {
+    font-size: 34px;
+  }
+
+  .hero-description {
+    font-size: 18px;
+  }
+
+  .hero-contact-btn {
+    padding: 14px 30px;
+    font-size: 16px;
+  }
+
+  .hero-image {
+    width: 210px;
+  }
+}
+
+@media (max-width: 360px) {
+
+  .hero-title {
+    font-size: 30px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .hero-image {
+    width: 180px;
+  }
+}

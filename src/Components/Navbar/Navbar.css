@@ -1,0 +1,176 @@
+/* ===== Navbar Container ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 10%;
+  z-index: 100;
+  background: rgba(4, 21, 45, 0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+/* ===== Logo / Title ===== */
+.nav-title {
+  font-size: 36px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+.nav-title:hover {
+  color: #576cbc;
+}
+
+/* ===== Menu Wrapper ===== */
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+/* ===== Menu Items ===== */
+.nav-menuitems {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+/* ===== Menu Links ===== */
+.nav-menuitems a {
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: none;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+/* Hover underline */
+.nav-menuitems a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background-color: #576cbc;
+  transition: 0.3s ease;
+}
+
+.nav-menuitems a:hover {
+  color: #576cbc;
+}
+
+.nav-menuitems a:hover::after {
+  width: 100%;
+}
+
+/* ===== Tablet ===== */
+@media screen and (max-width: 1024px) {
+
+  .nav-title {
+    font-size: 30px;
+  }
+
+  .nav-menuitems {
+    gap: 25px;
+  }
+
+  .nav-menuitems a {
+    font-size: 18px;
+  }
+}
+
+/* ===== Mobile ===== */
+@media screen and (max-width: 830px) {
+
+  .navbar {
+    padding: 15px 6%;
+  }
+
+  .nav-title {
+    font-size: 26px;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 65px;
+    right: 6%;
+    background: #19376d;
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    padding: 20px 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-menuitems {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .nav-menuitems a {
+    font-size: 18px;
+  }
+}
+
+/* ===== Small Phones ===== */
+@media screen and (max-width: 480px) {
+
+  .nav-title {
+    font-size: 22px;
+  }
+
+  .nav-menuitems a {
+    font-size: 16px;
+  }
+}
+
+/* ===== Better Tablet Adjustment ===== */
+@media screen and (max-width: 1024px) {
+  .navbar {
+    padding: 18px 7%;
+  }
+}
+
+/* ===== Improve Mobile Menu Layout ===== */
+@media screen and (max-width: 830px) {
+
+  .nav-menu {
+    width: 200px;
+    right: 0;
+    top: 70px;
+  }
+
+  .nav-menuitems {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .nav-menuitems a {
+    width: 100%;
+    padding: 8px 0;
+  }
+}
+
+/* ===== Extra Small Phones Fix ===== */
+@media screen and (max-width: 480px) {
+
+  .navbar {
+    padding: 12px 5%;
+  }
+
+  .nav-menu {
+    width: 170px;
+    padding: 15px 18px;
+  }
+
+  .nav-menuitems {
+    gap: 14px;
+  }
+}
