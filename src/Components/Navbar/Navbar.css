@@ -1,7 +1,9 @@
 /* ===== Navbar Container ===== */
 .navbar {
-  position: sticky;
+  position: fixed; /* fixed at top */
   top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -32,6 +34,7 @@
 .nav-menu {
   display: flex;
   align-items: center;
+  transition: all 0.3s ease;
 }
 
 /* ===== Menu Items ===== */
@@ -41,7 +44,6 @@
   list-style: none;
 }
 
-/* ===== Menu Links ===== */
 .nav-menuitems a {
   font-size: 20px;
   font-weight: 500;
@@ -71,25 +73,33 @@
   width: 100%;
 }
 
-/* ===== Tablet ===== */
-@media screen and (max-width: 1024px) {
+/* ===== Hamburger / Three Dots Icon ===== */
+.menu-icon {
+  display: none; /* hide on desktop */
+  font-size: 28px;
+  cursor: pointer;
+  color: #ffffff;
+  z-index: 110; /* above menu */
+}
 
+/* ===== Desktop / Tablet Adjustments ===== */
+@media screen and (max-width: 1024px) {
   .nav-title {
     font-size: 30px;
   }
-
   .nav-menuitems {
     gap: 25px;
   }
-
   .nav-menuitems a {
     font-size: 18px;
+  }
+  .navbar {
+    padding: 18px 7%;
   }
 }
 
 /* ===== Mobile ===== */
 @media screen and (max-width: 830px) {
-
   .navbar {
     padding: 15px 6%;
   }
@@ -98,30 +108,60 @@
     font-size: 26px;
   }
 
+  /* Show hamburger */
+  .menu-icon {
+    display: block;
+  }
+
+  /* Hide menu by default */
   .nav-menu {
     position: absolute;
-    top: 65px;
+    top: 65px; /* below navbar */
     right: 6%;
-    background: #19376d;
+    background: rgba(25, 55, 109, 0.95);
     backdrop-filter: blur(12px);
     border-radius: 12px;
     padding: 20px 25px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+
+    display: none; /* hidden until active */
+    flex-direction: column;
+    gap: 20px;
+
+    /* Slide-down animation */
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+
+  /* Show menu when active */
+  .nav-menu.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .nav-menuitems {
     flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
     gap: 18px;
   }
 
   .nav-menuitems a {
     font-size: 18px;
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  /* Extra top padding for hero section to prevent overlap */
+  .hero-container {
+    padding-top: 130px;
   }
 }
 
 /* ===== Small Phones ===== */
 @media screen and (max-width: 480px) {
-
   .nav-title {
     font-size: 22px;
   }
@@ -129,37 +169,6 @@
   .nav-menuitems a {
     font-size: 16px;
   }
-}
-
-/* ===== Better Tablet Adjustment ===== */
-@media screen and (max-width: 1024px) {
-  .navbar {
-    padding: 18px 7%;
-  }
-}
-
-/* ===== Improve Mobile Menu Layout ===== */
-@media screen and (max-width: 830px) {
-
-  .nav-menu {
-    width: 200px;
-    right: 0;
-    top: 70px;
-  }
-
-  .nav-menuitems {
-    width: 100%;
-    align-items: flex-start;
-  }
-
-  .nav-menuitems a {
-    width: 100%;
-    padding: 8px 0;
-  }
-}
-
-/* ===== Extra Small Phones Fix ===== */
-@media screen and (max-width: 480px) {
 
   .navbar {
     padding: 12px 5%;

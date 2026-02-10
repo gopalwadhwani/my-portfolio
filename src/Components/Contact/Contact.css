@@ -1,4 +1,4 @@
-/* ===== Contact Section ===== */
+/* ===== CONTACT SECTION ===== */
 .contact {
   padding: 60px 10%;
   background: rgba(4, 21, 45, 0.85);
@@ -9,27 +9,26 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 40px;
+  margin-top: 0; /* remove extra space */
 }
 
-/* ===== Left Text ===== */
+/* Left Text */
 .contact-text {
   max-width: 350px;
 }
 
 .contact-text h2 {
-  margin-left: 30px;
   font-size: 56px;
   font-weight: 700;
   margin-bottom: 12px;
 }
 
 .contact-text p {
-    margin-left: 34px;
   font-size: 28px;
   color: #b8c2d9;
 }
 
-/* ===== Links Container ===== */
+/* Links Container */
 .contact-links {
   display: flex;
   flex-direction: column;
@@ -37,7 +36,7 @@
   list-style: none;
 }
 
-/* ===== Individual Link Item ===== */
+/* Individual Link */
 .contact-links li {
   display: flex;
   align-items: center;
@@ -47,85 +46,62 @@
   background: rgba(25, 55, 109, 0.6);
   transition: all 0.3s ease;
   cursor: pointer;
-  width: 320px;
+
+  width: 100%;
+  max-width: 320px;
+  flex-wrap: nowrap;       /* no wrapping on desktop */
+  box-sizing: border-box;
 }
 
-/* Hover Effect */
 .contact-links li:hover {
-  transform: translateY(-5px);
+  transform: translateY(-2px);
   background: rgba(87, 108, 188, 0.8);
   box-shadow: 0 8px 25px rgba(87, 108, 188, 0.4);
 }
 
-/* ===== Icons ===== */
 .contact-links img {
   width: 32px;
   height: 32px;
 }
 
-/* ===== Links Text ===== */
 .contact-links a {
   text-decoration: none;
   color: white;
   font-size: 18px;
   font-weight: 500;
+
+  flex: 1;
+  min-width: 0;
+
+  white-space: normal;     /* allow wrapping on desktop too */
+  overflow: visible;
+  text-overflow: clip;
+  word-break: break-word;  /* break long emails nicely */
 }
 
+/* ===== MEDIA QUERIES ===== */
+
+/* Desktop/Tablet adjustments */
 @media screen and (max-width: 900px) {
-
-  .contact {
-    margin-top: 70px;
-  }
-
-  .contact-text h2 {
-    font-size: 34px;
-  }
-
-  .contact-links a {
-    font-size: 17px;
-  }
-}
-
-@media screen and (max-width: 700px) {
-
-  .contact {
-    margin-top: 40px;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .contact-text {
-    max-width: 100%;
-  }
-
-  .contact-links {
-    align-items: center;
-  }
-}
-
-/* ===== Tablet Improvement ===== */
-@media screen and (max-width: 768px) {
-
   .contact-text h2 {
     font-size: 42px;
-    margin-left: 0;
   }
 
   .contact-text p {
     font-size: 22px;
-    margin-left: 0;
   }
 
   .contact-links li {
-    width: 280px;
+    max-width: 280px;
   }
 }
 
-/* ===== Mobile ===== */
-@media screen and (max-width: 480px) {
-
+/* Mobile: allow wrapping */
+@media screen and (max-width: 600px) {
   .contact {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     padding: 50px 6%;
   }
 
@@ -138,33 +114,31 @@
   }
 
   .contact-links li {
-    width: 240px;
-    padding: 12px 18px;
+    max-width: 100%;
+    flex-wrap: wrap;           /* allow wrapping on mobile */
+  }
+
+  .contact-links a {
+    white-space: normal;       /* allow multiple lines */
+    overflow: visible;
+    text-overflow: clip;
+    font-size: 16px;
   }
 
   .contact-links img {
     width: 28px;
     height: 28px;
   }
-
-  .contact-links a {
-    font-size: 16px;
-  }
 }
 
-/* ===== Extra Small Devices ===== */
+/* Extra small devices */
 @media screen and (max-width: 360px) {
-
   .contact-text h2 {
     font-size: 28px;
   }
 
   .contact-text p {
     font-size: 16px;
-  }
-
-  .contact-links li {
-    width: 210px;
   }
 
   .contact-links a {

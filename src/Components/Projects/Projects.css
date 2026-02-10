@@ -1,11 +1,12 @@
 /* ===== PROJECTS SECTION ===== */
 .projects-container {
-  padding: 30px 10% 120px; /* more breathing room */
+  padding: 30px 10% 50px; /* consistent bottom spacing */
   background: #04152d;
   color: #ffffff;
+  margin: 0; /* remove extra margin */
 }
 
-/* ===== MAIN TITLE (Projects) ===== */
+/* Main Title */
 .projects-title {
   font-size: 50px;
   font-weight: 800;
@@ -14,6 +15,7 @@
   letter-spacing: 1px;
 }
 
+/* Subtitle with accent */
 .projects-subtitle {
   font-size: 36px;
   font-weight: 700;
@@ -49,21 +51,22 @@
   background: rgba(90, 121, 179, 0.4);
 }
 
-
-/* ===== MINI PROJECTS GRID ===== */
+/* Projects Grid */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
+  margin-bottom: 0;
 }
 
-/* ===== PROJECT CARD ===== */
+/* Project Card */
 .project-card {
   background: #19376d;
   border-radius: 20px;
   padding: 32px 25px;
   text-align: center;
   transition: all 0.3s ease;
+  margin-bottom: 0;
 }
 
 .project-card img {
@@ -83,19 +86,18 @@
   color: #dbe3ff;
 }
 
-/* subtle hover like skills */
 .project-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 18px 40px rgba(87, 108, 188, 0.35);
 }
 
-/* ===== MAJOR PROJECT SECTION ===== */
-
+/* Major Project */
 .working-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin-bottom: 0;
 }
 
 .working-container img {
@@ -109,11 +111,11 @@
   font-family: "Roboto", sans-serif;
   font-size: 34px;
   color: #fff;
+  margin-bottom: 0;
 }
 
-/* ===== Tablet ===== */
+/* ===== MEDIA QUERIES ===== */
 @media (max-width: 900px) {
-
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
@@ -136,11 +138,9 @@
   }
 }
 
-/* ===== Mobile ===== */
 @media (max-width: 600px) {
-
   .projects-container {
-    padding: 30px 6% 90px;
+    padding: 30px 6% 40px;
   }
 
   .projects-grid {
@@ -183,9 +183,7 @@
   }
 }
 
-/* ===== Extra Small Devices ===== */
 @media (max-width: 360px) {
-
   .projects-title {
     font-size: 30px;
   }
