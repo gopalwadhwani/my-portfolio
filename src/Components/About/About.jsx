@@ -48,9 +48,9 @@ const About = () => {
             <div className="about-itemtext">
               <h3>UI Designer</h3>
               <p>
-                I design simple, clean, and intuitive interfaces with a strong
-                focus on user experience. I enjoy blending creativity with
-                usability to create visually balanced designs.
+                I’m a beginner UI designer focused on creating clean, 
+                user-friendly interfaces , I’m still learning, and tryingg to grow with every project
+                and putting effort into making designs that are both attractive and easy to use.
               </p>
             </div>
           </li>
