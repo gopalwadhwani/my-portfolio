@@ -1,21 +1,28 @@
-/* ===== Navbar Container ===== */
+/* =========================
+   Navbar Container
+   ========================= */
 .navbar {
-  position: fixed; /* fixed at top */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  height: 80px; /* Fixed height helps with layout calculations */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 10%;
-  z-index: 100;
+  padding: 0 10%; /* Adjusted padding since height is fixed */
+  z-index: 1000; /* High z-index to stay on top */
+  
   background: rgba(4, 21, 45, 0.85);
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
-/* ===== Logo / Title ===== */
+/* =========================
+   Logo / Title
+   ========================= */
 .nav-title {
   font-size: 36px;
   font-weight: 700;
@@ -30,18 +37,21 @@
   color: #576cbc;
 }
 
-/* ===== Menu Wrapper ===== */
+/* =========================
+   Menu Items
+   ========================= */
 .nav-menu {
   display: flex;
   align-items: center;
   transition: all 0.3s ease;
 }
 
-/* ===== Menu Items ===== */
 .nav-menuitems {
   display: flex;
   gap: 40px;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-menuitems a {
@@ -53,7 +63,7 @@
   transition: 0.3s ease;
 }
 
-/* Hover underline */
+/* Hover Underline Animation */
 .nav-menuitems a::after {
   content: "";
   position: absolute;
@@ -73,17 +83,26 @@
   width: 100%;
 }
 
-/* ===== Hamburger / Three Dots Icon ===== */
+/* =========================
+   Mobile Menu Icon
+   ========================= */
 .menu-icon {
-  display: none; /* hide on desktop */
+  display: none;
   font-size: 28px;
   cursor: pointer;
   color: #ffffff;
-  z-index: 110; /* above menu */
+  z-index: 1100;
 }
 
-/* ===== Desktop / Tablet Adjustments ===== */
+/* =========================
+   Media Queries
+   ========================= */
+
+/* Tablet (1024px and down) */
 @media screen and (max-width: 1024px) {
+  .navbar {
+    padding: 0 7%;
+  }
   .nav-title {
     font-size: 30px;
   }
@@ -93,48 +112,40 @@
   .nav-menuitems a {
     font-size: 18px;
   }
-  .navbar {
-    padding: 18px 7%;
-  }
 }
 
-/* ===== Mobile ===== */
+/* Mobile (830px and down) */
 @media screen and (max-width: 830px) {
   .navbar {
-    padding: 15px 6%;
+    padding: 0 6%;
+    height: 70px; /* Slightly smaller on mobile */
   }
 
   .nav-title {
     font-size: 26px;
   }
 
-  /* Show hamburger */
   .menu-icon {
     display: block;
   }
 
-  /* Hide menu by default */
   .nav-menu {
     position: absolute;
-    top: 65px; /* below navbar */
+    top: 70px; /* Matches navbar height */
     right: 6%;
     background: rgba(25, 55, 109, 0.95);
     backdrop-filter: blur(12px);
     border-radius: 12px;
     padding: 20px 25px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-
-    display: none; /* hidden until active */
+    
+    display: none;
     flex-direction: column;
     gap: 20px;
-
-    /* Slide-down animation */
     opacity: 0;
     transform: translateY(-10px);
-    transition: all 0.3s ease;
   }
 
-  /* Show menu when active */
   .nav-menu.active {
     display: flex;
     opacity: 1;
@@ -149,37 +160,23 @@
   }
 
   .nav-menuitems a {
-    font-size: 18px;
     width: 100%;
     padding: 8px 0;
   }
-
-  /* Extra top padding for hero section to prevent overlap */
-  .hero-container {
-    padding-top: 130px;
-  }
 }
 
-/* ===== Small Phones ===== */
+/* Small Phones (480px and down) */
 @media screen and (max-width: 480px) {
+  .navbar {
+    padding: 0 5%;
+  }
   .nav-title {
     font-size: 22px;
   }
-
   .nav-menuitems a {
     font-size: 16px;
   }
-
-  .navbar {
-    padding: 12px 5%;
-  }
-
   .nav-menu {
     width: 170px;
-    padding: 15px 18px;
-  }
-
-  .nav-menuitems {
-    gap: 14px;
   }
 }

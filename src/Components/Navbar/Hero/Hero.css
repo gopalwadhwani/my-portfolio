@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 60px 8%;
+  padding: 160px 8%;
   min-height: calc(100vh - 80px);
   z-index: 1;
 
@@ -24,16 +24,12 @@
   gap: 20px; /* spacing between title, paragraph, button */
 }
 
-/* Limit text width for desktop readability */
-.hero-content > *:not(.hero-image-wrapper) {
-  max-width: 600px;
-}
 
 /* ===== Title ===== */
 .hero-title {
   font-size: 50px;
   font-weight: 900;
-  margin-bottom: 20px;
+  
   font-family: "Roboto", sans-serif;
   line-height: 1.1;
 
@@ -115,6 +111,12 @@
   100% { transform: translateY(0); }
 }
 
+.hero-content,
+.hero-image-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
 /* ===== Blur Background ===== */
 .hero-top-blur,
 .hero-bottom-blur {
@@ -124,7 +126,7 @@
   background: #576cbc;
   filter: blur(140px);
   opacity: 0.18;
-  z-index: -1;
+  z-index: 0;
 }
 
 .hero-top-blur {
@@ -141,33 +143,41 @@
 @media (min-width: 901px) {
   .hero-container {
     flex-direction: row;
+    flex-wrap: nowrap; /* prevent wrapping on desktop */
+  }
+
+  .hero-content {
+    flex: 1; /* take available left space */
   }
 
   .hero-image-wrapper {
-    order: 2;
+    margin-left: auto; /* push image fully to right */
   }
 }
+
 
 /* ---------- TABLET ---------- */
 @media (max-width: 900px) {
   .hero-container {
-    flex-direction: column;
+    flex-direction: column; /* keep stacking vertically on small screens */
     text-align: center;
-    padding-top: 120px;
+    padding-top: 120px 8%;
+    align-items: center; /* center everything horizontally */
   }
 
   .hero-content {
     align-items: center;
+    order: 1; /* text first */
   }
 
   .hero-image-wrapper {
-    order: -1;
+    order: 2; /* image always after text */
     margin-bottom: 20px;
     width: 280px;
   }
 
   .hero-title {
-    font-size: 52px;
+    font-size: 46px;
   }
 
   .hero-description {
