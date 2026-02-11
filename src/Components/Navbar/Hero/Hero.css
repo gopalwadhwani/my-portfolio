@@ -203,12 +203,22 @@
   .hero-description {
     font-size: 20px;
   }
+  .hero-content {
+    order: 2; /* text second */
+    align-items: center; /* keep text centered */
+  }
+
+  .hero-image-wrapper {
+    order: 1; /* image first */
+    margin-bottom: 20px; /* spacing below image */
+    width: 250px; /* already defined */
+  }
 }
 
 /* ---------- SMALL MOBILE ---------- */
 @media (max-width: 480px) {
   .hero-container {
-    padding: 40px 20px;
+    padding: 100px 10%;
     min-height: auto;
   }
 
@@ -218,11 +228,11 @@
   }
 
   .hero-title {
-    font-size: 34px;
+    font-size: 36px;
   }
 
   .hero-description {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .hero-contact-btn {
