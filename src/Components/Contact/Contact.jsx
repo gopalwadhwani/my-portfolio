@@ -22,7 +22,7 @@ const Contact = () => {
         <li>
           <img src={emailIcon} alt="Email" />
           <a href="mailto:yourmail@gmail.com">
-            gopalwadhwai435@gmail.com
+            gopalwadhwani435@gmail.com
           </a>
         </li>
 

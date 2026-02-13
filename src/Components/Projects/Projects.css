@@ -70,9 +70,10 @@
 }
 
 .project-card img {
-  width: 100%;
+  display: block;
   max-width: 140px;
-  margin-bottom: 22px;
+  width: 100%;
+  margin: 0 auto 22px;  
 }
 
 .project-card h3 {
